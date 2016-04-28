@@ -32,7 +32,7 @@ module Payu
       if variant == 'sms'
         return "https://#{gateway_url}/paygw/#{encoding}/NewSMS"
       else
-        return "https://#{gateway_url}/paygw/#{encoding}/NewPayment"
+        return "https://#{gateway_url}/api/v2_1/orders"
       end
     end
 
