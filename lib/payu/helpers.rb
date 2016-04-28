@@ -5,8 +5,9 @@ module Payu
     # Generates form fields for specified transaction object
     def payu_hidden_fields(transaction)
       html = ""
-
-      %w(pos_id pos_auth_key pay_type session_id amount amount_netto desc
+      
+      html << hidden_field_tag('merchantPosId', transaction.send('pos_id'))
+      %w(pos_auth_key pay_type session_id amount amount_netto desc
       order_id desc2 trsDesc first_name last_name street street_hn
       street_an city post_code country email phone language client_ip
       js payback_login sig ts
